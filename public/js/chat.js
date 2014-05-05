@@ -1,22 +1,25 @@
 $(document).on("ready",start);
 var name= "";
+
 function start() {
 	$('#hodor-send').on("click",send);
 	$('.hodor-send').on("click",logged);
 	listenEnter();
 	autoSet();
 	requestMsj();
+	
 }
-
 
 
 function clean(){
 	$('textarea').val("");
 }
+
 function hideAndShow(hiden,shows){
 	$('.'+hiden).hide("slow");
 	$('.'+shows).show("slide");
 }
+
 function send2(){
 	$('.hided').hide("slow");
 	hideAndShow('asd','hided2');
@@ -27,6 +30,7 @@ function send2(){
 	clean();
 	setTimeout(hodor,3000);
 }
+
 var send = function(){
 	var mjss = $('.second-text').val()
 	//console.log(mjss);
@@ -56,8 +60,10 @@ var requestMsj = function(){
 	xhr.done(function(data){
 		textCont.html('');
 		data.forEach(function(mensaje){
-			if(mensaje.name == "")
+			if(mensaje.name == ""){
+			$('.text-chat').css({"color":getRandomColor()});
 			textCont.append("<br> <p class='text-chat'><b>Hodor</b>: "+mensaje.hodor+"<small>("+mensaje.msj+")</small></p>");
+			}
 			else
 			textCont.append("<br> <p class='text-chat'><b>"+mensaje.name+"</b>: "+mensaje.hodor+"<small>("+mensaje.msj+")</small></p>");
 		});
@@ -88,12 +94,20 @@ function logged(){
 		}
 }
 
-	function listenEnter(){
+function listenEnter(){
    		 $(document).keypress(function(e) {
 	    if(e.which == 13) {
 	       // alert('You pressed enter!');
 	       logged();
 	   	 		}
 		});
-	}
+}
 
+function getRandomColor() {
+    var letters = '0123456789ABCDEF'.split('');
+    var color = '#';
+    for (var i = 0; i < 6; i++ ) {
+        color += letters[Math.floor(Math.random() * 16)];
+    }
+    return color;
+}

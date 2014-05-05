@@ -8,96 +8,82 @@ body{
 .head{
 	padding: 1%;
 	margin: 0 auto;	
-	/*border:  1px solid black*/;
 	background-color: rgb(52,152,219);
 	box-shadow: 0px 4px 5px rgb(44,62,80);
 }
+
 .img-head{
+	float: left;
+	position: relative;
+	top: -15px;
 	width: 60px;
 }
 
 hgroup{
+	position: relative;
+	margin-left: 10px;
+	display: inline-block;
 	text-align: left;
 	padding: 0px;
 	line-height: 0.5;
 	width: 80%;
 	color: rgb(44,62,80);
 }
-h1{
-	position: absolute;
-	left: 10%;
-}
-h2{
-	position: absolute;
-	left: 12%;
-	top: 11%;
-}
-.hodor-huh{
-	position: relative;
-	left: 25;
-}
+
+
 .content{
 	margin:  2% auto;
 }
+
 .wrap-chat{
-	position: inherit;
+	position: relative;
 	padding: 1%;
 	border: 2px solid rgb(44,62,80);
 	width: 80%;
 	height: 300px;
-	margin:  1% auto;
+	margin:  2% auto;
 	border-radius: 10px;
 	background-color: white;
 	overflow: auto;
 	display: none;
 }
 .wrap-send{
-	position: relative;
-	clear: both;
-	width: 80%;
+	width: 65%;
+	height: 50px;
 	display: none;
-	margin:  1% auto;
-
+	margin-left:8.5%;
+	margin-top: 0;
 }
-
-textarea{
-	margin: 1% auto;
-	width: 80%;
-	height: 100px;
-	resize: none;
-	border-radius: 10px;
-	border: 2px solid rgb(44,62,80);
-	padding: 1%;	
-	
-}
-
 .prin-text{
 	border-radius: 5px;
 	width: 100%;
 	padding: 1%;
 	line-height: 0.5px;
-
 }
-
-.second-chat{
-	padding: 1%;
-	/*border: 1px solid black;*/
-	width: auto;
+.prin-chat{
 	
-	margin-left: 10%;
+}
+.second-text{
+	margin: 1% auto;
+	width: 100%;
+	resize :none;
+	border-radius: 10px;
+	border: 2px solid rgb(44,62,80);
+	padding: 1%;
+	text-align: justify;
 }
 
 #hodor-send{
 	position: relative;
-	left: 70%;
-	top: -75px;
 	border: 1px solid rgb(41,128,185);
 	background-color: rgb(41,128,185);
 	color: white;
+	padding: 1%;
 	border-radius: 5px;
-	width: 80px; 
-	padding: 2%;
 	box-shadow: 0.5px 4.3px 1px rgb(44,62,80);
+	left: 110%;
+	right: 50%;
+	top: -55px;
 }
 
 .hodor-send{
@@ -108,10 +94,9 @@ textarea{
 	color: white;
 	border-radius: 5px;
 	width: 80px; 
-	height: 30px;
+	
 	padding: 1%;
 	box-shadow: 0.5px 4.3px 1px rgb(44,62,80);
-
 	margin: 5% auto;
 }
 
@@ -127,61 +112,37 @@ textarea{
 	text-align: center;
 	height: 40px;
 }
+
 #hoder-send:hover{
 	padding: 1%;
 	background-color:rgb(44,62,80);
-	animation: blurButton 3s infinite; 
+	
 }
 
-
-.user_name{
-	position: relative;
-	padding: 4%;
-	border-radius: 10px;
-	border: 0.5px solid black;
-	background-color: white;
-	width: 20%;
-	height: 100px;
-	z-index: 1;
-
-}
 .darkBack{
 	background: #848484;
 	opacity:  0.8;
 }
-.absolute_center{
-	position: absolute;
-	top: 0;
-	right: 0;
-	left:0;
-	margin-right: auto;
-	margin-left: 40%;
-	margin-top: 18%;
-	text-align: center;
 
+.absolute_center{	
+	width: auto;
+	display: block;
+	margin-top: 10%;
+	margin-left: 40%;
+	margin-right: 40%;
+	background-color: white;
+	padding: 1%;
+	border-radius: 10px;
 }
-@keyframes blurButton{
-	0% {background-color: rgb(41,128,185);box-shadow: 0.5px 4.3px 1px #0000;}
-	25% { background-color: rgb(39,126,183);box-shadow: 0.5px 4.3px 1px #0000;}
-	50% { background-color: rgb(30,115,170);box-shadow: 0.5px 4.3px 1px #0000;}
-	75% { background-color: rgb(232,75,65);box-shadow: 0.5px 4.3px 1px #0000;}
-	100% { background-color: rgb(231,76,60);box-shadow: 0.5px 4.3px 1px #0000;}
-}
-.center {
-  position: relative;
-  top: 50%;
-  bottom: 50%;
-  right: 50%;
-  left: 50%;
-  width: 50%;
-}
+
+
 .center-text{
 	padding: 1%;
 	margin: 0.5% auto;
 }
 
 .text-chat{
-	line-height: 0.7%;
+	line-height: 1%;
 	width: auto;
 	display: inline;
 }
@@ -205,6 +166,7 @@ footer{
 	width: 100%;
 	padding-bottom: 1%;
 	text-align: center;
+	margin-top: 50px;
 	/*border:  1px solid black*/;
 	background-color: rgb(52,152,219);
 	
@@ -230,16 +192,43 @@ a{
 	display: none;
 }
 
-@media (max-width: 500px) {
+
+@media (max-width:800px){
+	footer{
+		margin-top: 80px;
+	}
+	hgroup{
+		width: 100%;
+	}
 	.img-head{
-		position: relative;
-		right: 20px;
+		clear: both;
+		float: right;
+		left: 0;
+		margin-right: 0;
 	}
-	h1{
-		left: 27%;
+	.absolute_center{
+		margin-top: 40%;
+		margin-left: 10%;
+		margin-right: 10%;
 	}
-	h2{
-		left: 27%;
+	.second-text{
+		height: 80px;
 	}
+	#hodor-send{
+		padding: 2%;
+	}
+
+}
+@media (max-width:348px){
+	.content{
+		margin: 5% auto;
+	}
+	.second-text{
 		
-    }
+		
+	}
+	.img-head{
+		display: none;
+	}
+
+}
